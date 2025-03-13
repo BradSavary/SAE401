@@ -1,62 +1,66 @@
-# TP Symfony
+# SAÉ 4.DWeb-DI.01 | Développer pour le web
 
-Si c'est la première séance, commencez par lire le TP1 en passant par le lien un peu plus bas. Sinon, suivez les instructions suivantes pour relancer votre application Symfony.
+## 📌 Description du projet
+Ce projet s'inscrit dans le cadre de la SAÉ 4.DWeb-DI.01 du BUT2 MMI à l'IUT du Limousin. L'objectif est de concevoir et développer une application web intégrant un back office et une interface dynamique dans un contexte international. 
 
-## Lancer l'application
-Vérifiez que Docker Desktop est lancé en cherchant son icône dans la barre de tâche. Si vous ne la trouvez pas, ouvrez l'application et attendez que tout soit opérationnel.
+Les étudiants doivent répondre à la problématique suivante :
+> **Comment développer une application ou un service web en proposant une expérience utilisateur de qualité ?**
 
-Ouvrez VS Code, connectez-vous à votre Ubuntu avec WSL (bouton bleu avec les doubles flèches en bas à droite), puis ouvrez le dossier contenant votre application.
+## 🎯 Objectifs et compétences
 
-Lancer l'environnement Docker : installer l'extension "Docker" pour VS Code si ce n'est pas déjà fait, faites un clic droit sur le fichier docker-compose.yml, puis "Compose Up". Vous pouvez aussi ouvrir un terminal dans le dossier du projet, et faire un `docker compose up -d`.
+### Objectifs
+- Développer une application web avec un back office et une interface utilisateur interactive.
+- Expérimenter des frameworks de développement back et front.
+- Déployer l'application sur un hébergement sécurisé.
+- Produire une documentation technique en anglais.
 
-Installer les dépendances nécessaires : ouvrez un terminal dans le conteneur "tp-symfony-php" à partir de VS Code (Icône Docker à gauche, clic droit sur le conteneur, puis "Attach Shell") et faites un `composer install`.
+### Compétences ciblées
+- Comprendre les écosystèmes et les besoins utilisateurs.
+- Concevoir une réponse stratégique pertinente.
+- Développer pour le web et les médias numériques.
+- Entreprendre dans le secteur du numérique.
 
-Vérifiez que vous accédez à votre application: [http://localhost:8787](http://localhost:8787).
+## 🔍 Thème du projet
+### **Développement d'un réseau social**
+L'objectif est de créer une application de type **Twitter/Instagram** permettant aux utilisateurs de publier et partager des contenus.
 
-## Sauvegarder votre base de données
-Si vous avez accès à la base de données, faites un export depuis phpMyAdmin en cliquant sur la base dans le menu à gauche, puis sur l'onglet "Exporter". Vous pouvez ensuite sauvegarder le fichier avec le nom lego_store.sql dans le répertoire docker/mysql/ de votre projet. De cette manière, si la base de données est vierge, le fichier sera automatiquement chargé et vous retrouverez la base que vous aviez auparavant.
+## 🛠️ Technologies utilisées
+### **Environnement de développement**
+- **Docker** pour le développement de l'application.
 
-## Versionner votre travail
-Il est très important de versionner vos fichiers régulièrement, afin de pouvoir facilement sauvegarder les différents versions de votre projet. En pratique, cela se traduit par faire des "commits" réguliers grâce à Git, en faisant des "push" sur votre repository GitHub.
+### **Back-end**
+- **Symfony** avec le bundle **Doctrine** pour la gestion des données.
+- Développement d'une **API REST** pour la communication avec le front.
+- Création du **back office** d'administration avec **EasyAdmin**.
 
-**Pensez à commit la version de votre projet et à faire un export de votre base de données au moins une fois en fin de séance!**
+### **Front-end**
+- **React** et **Tailwind CSS** pour l'interface utilisateur.
+- Utilisation de **React Router** pour la gestion des routes.
+- Maquettes **Figma** pour la conception des interfaces.
 
-Pour faire un commit:
-S'il y a besoin, commencez par mettre à jour votre Fork avec les derniers commits du repository de base. Pour cela, allez sur votre repository sur GitHub, puis faites "Sync Fork" -> "Update branch".
+### **Hébergement**
+- Déploiement sur un serveur **LAMP** (ex: Pulse Heberg ou mmi.unilim.fr).
 
-Ensuite exécutez ces commandes:
-```
-# Positionnez-vous dans le répertoire du projet si ce n'est pas déjà fait
-cd R4.DWeb-DI.07/
+## 📌 Organisation du projet
+### **Gestion du code avec GitHub**
+- Utilisation d'un repository GitHub pour le suivi du développement.
+- Chaque itération est conservée dans une branche distincte nommée `iteration-x`.
+- Merge des itérations dans une branche unique à la fin de chaque cycle.
 
-# Faites le commit (vous pouvez personnaliser le message entre guillemets)
-git add .
-git commit -m "TPX - Exercice X" 
+### **Méthodologie de développement**
+- **Itérations** : chaque version est fonctionnelle, même si incomplète.
+- **Cycles** : regroupement des itérations avant la mise en production.
+- **User Stories** : chaque itération correspond à une fonctionnalité définie.
 
-# Mettez à jour votre repository local avec la dernière version du repository distant
-git fetch
-git rebase
+## 🚀 Déploiement
+Chaque cycle finalisé donnera lieu à une version de production hébergée sur un serveur.
 
-# Mettez à jour le repository sur GitHub
-git push -u
-```
+## 📖 Documentation
+Une partie significative de la documentation sera rédigée en anglais pour répondre aux contraintes du contexte international.
 
-## Bugs connus
-### Fichiers avec l'extension :Zone.Identifier
-Si votre projet contient un ou plusieurs fichiers avec l'extension :Zone.Identifier, c'est certainement parce que vous avez déplacé des fichiers provenant de votre système de fichiers Windows vers votre distribution Linux.
-Ils ne sont pas utiles, vous pouvez les supprimer avec cette commande : `sudo find . -name "*:Zone.Identifier" -type f -delete`. Le mot de passe est celui du user de votre distribution Linux.
+## 👥 Collaboration
+Le projet inclut des évaluations sur la capacité des étudiants à **communiquer et collaborer** au sein d'organisations.
 
-Si vous souhaitez désactiver définitivement la création de ces fichiers, [vous pouvez suivre les instructions juste ici](https://codedesign.fr/snippet/supprimer-fichier-zone-identifier-windows-wsl/).
+---
 
-## Liens
-[TP1 : Introduction à Symfony](https://docs.google.com/document/d/1p57bF8mDKqiQ3j7rnpXmQ3zNeGixdrL8mB9-7ei4xPw/edit?usp=sharing)
-
-[TP2 : Symfony / Twig](https://docs.google.com/document/d/11uuAOaOj0v4lq472WgB8HtH0jFywj6eqPpf_MF6erPA/edit?usp=sharing)
-
-[TP3 : Symfony / Database as a Service](https://docs.google.com/document/d/1cR5Er7pTwAj1ihKRMcsArq_EEaEUslYvOdaPq20NPmY/edit?usp=sharing)
-
-[TP4 : Symfony / Doctrine](https://docs.google.com/document/d/1Og8lNe1Afz20ExA_TRfgnvA7vMFhnnEaoDwHnVdpzNk/edit?usp=sharing)
-
-[TP5 : Symfony / Doctrine #2](https://docs.google.com/document/d/1uHgIVIQJMGPuTIubSbYgccfyh6NRQjEE3leYa9K2bLg/edit?usp=sharing)
-
-[TP6 : Symfony / Security](https://docs.google.com/document/d/1RM3viMXUPBVPOztbH1l2mXn8FEh7Xzj-Su74d8yriqg/edit?usp=sharing)
+📌 **IUT du Limousin - Département MMI - BUT2**
