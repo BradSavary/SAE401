@@ -39,27 +39,13 @@ L'objectif est de créer une application de type **Twitter/Instagram** permettan
 - Maquettes **Figma** pour la conception des interfaces.
 
 ### **Hébergement**
-- Déploiement sur un serveur **LAMP** (ex: Pulse Heberg ou mmi.unilim.fr).
+- Déploiement sur un serveur **LAMP**.
 
 ## 📌 Organisation du projet
-### **Gestion du code avec GitHub**
-- Utilisation d'un repository GitHub pour le suivi du développement.
-- Chaque itération est conservée dans une branche distincte nommée `iteration-x`.
-- Merge des itérations dans une branche unique à la fin de chaque cycle.
-
 ### **Méthodologie de développement**
 - **Itérations** : chaque version est fonctionnelle, même si incomplète.
 - **Cycles** : regroupement des itérations avant la mise en production.
 - **User Stories** : chaque itération correspond à une fonctionnalité définie.
-
-## 🚀 Déploiement
-Chaque cycle finalisé donnera lieu à une version de production hébergée sur un serveur.
-
-## 📖 Documentation
-Une partie significative de la documentation sera rédigée en anglais pour répondre aux contraintes du contexte international.
-
-## 👥 Collaboration
-Le projet inclut des évaluations sur la capacité des étudiants à **communiquer et collaborer** au sein d'organisations.
 
 ---
 
