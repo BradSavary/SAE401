@@ -12,6 +12,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+
 
 class UserController extends AbstractController
 {
@@ -66,6 +68,30 @@ class UserController extends AbstractController
 
         // Generate a token or start a session here
 
-        return new Response('User logged in', Response::HTTP_OK);
+
+        return new Response('User logged in.', Response::HTTP_OK);
     }
+
+    #[Route('/user/update/{id}', name: 'user_update', methods: ['PUT'])]
+public function updateUser(int $id, Request $request, EntityManagerInterface $entityManager): Response
+{
+    $data = json_decode($request->getContent(), true);
+    $user = $entityManager->getRepository(User::class)->find($id);
+
+    if (!$user) {
+        throw new AccessDeniedException('User not found.');
+    }
+
+    if (isset($data['username'])) {
+        $user->setUsername($data['username']);
+    }
+
+    if (isset($data['email'])) {
+        $user->setEmail($data['email']);
+    }
+
+    $entityManager->flush();
+
+    return new Response('User updated successfully', Response::HTTP_OK);
+}
 }
